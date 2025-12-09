@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://storage.orangeapps.ph/school-99/sch-files/carousel/original/NT74So-1650971998.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(8px);
+            z-index: -2; 
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5); 
+            z-index: -1; 
+        }
+        
+        .content {
+            position: relative;
+            padding: 40px;
+            z-index: 1; 
+            color: #fff; 
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-right: 25px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            margin: 0;
+            color: #fff;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 10px;
+            background-color: #570303;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #3d0202;
+        }
+
+        .info-box {
+            display: none;
+            margin-top: 25px;
+            background: rgba(255,255,255,0.1); 
+            backdrop-filter: blur(5px); 
+            padding: 20px;
+            border-radius: 8px;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
+            color: #fff;
+        }
+    </style>
+
+    <script>
+        function showSection(id) {
+            document.querySelectorAll('.info-box').forEach(box => {
+                box.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+
+    <div class="background"></div>
+    <div class="overlay"></div>
+
+    <div class="content">
+        <div class="header">
+            <div class="photo">
+                <img url="C:https://drive.google.com/file/d/1o-sc9dV53NfWF3Alshh090A9GTb45geY/view?usp=sharing" alt="Student Photo">
+            </div>
+
+            <div>
+                <h1>Student Profile</h1>
+                <p>Welcome to my personal student profile webpage.</p>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button onclick="showSection('studentInfo')">Student Information</button>
+            <button onclick="showSection('schoolHistory')">School History</button>
+            <button onclick="showSection('workExperience')">Work Experience</button>
+        </div>
+
+        <div id="studentInfo" class="info-box">
+            <h2>Student Information</h2>
+            <p><strong>Name:</strong> Justine Manlosa</p>
+            <p><strong>Age:</strong> 21</p>
+            <p><strong>Course:</strong> Bachelor of Science in Information Technology</p>
+        </div>
+
+        <div id="schoolHistory" class="info-box">
+            <h2>School History</h2>
+            <p><strong>High School:</strong> Benigno V. Aldana National High School (2016 – 2020)</p>
+            <p><strong>Senior High School:</strong> Benigno V. Aldana National High School (2020 – 2023)</p>
+            <p><strong>College:</strong> University of The Cordilleras (2023 – 2024)</p>
+            <p><strong>College:</strong> University of Eastern Pangasinan (2024 – Present)</p>
+        </div>
+
+        <div id="workExperience" class="info-box">
+            <h2>Work Experience</h2>
+            <p><strong>Intern – Basic Computer Skills</strong> (2023)</p>
+            <p>Joined in a 30-day Internship about Basic Skills (e.g., 3D Animation, Cisco, Photo Editing).</p>
+            <p><strong>McDonald's – Service Crew</strong> (2024 – Present)</p>
+        </div>
+    </div>
+
+</body>
+</html>
